@@ -1,0 +1,6 @@
+{
+  "realm": "pumpkin",
+  "auth-server-url": "http://localhost:8181/auth",
+  "resource": "bearer",
+  "bearer-only": true
+}
