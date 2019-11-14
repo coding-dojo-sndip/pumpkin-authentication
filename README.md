@@ -8,7 +8,7 @@ En situation normale, seule la connexion à travers une appli intermédiaire (fr
 
 En situation nominae le web service est non authentifié et il donc en pratique accessible quand même par un utilisateur, ce qui  bypass complètement les sécurités potentiellement mise en place par le frontend.
 
-![archi](https://raw.githubusercontent.com/coding-dojo-sndip/pumpkin-authentication/master/archi.PNG)
+![archi](/archi.PNG)
 
 Au cours de ce conding dojo nous nous focalisons sur le web service.
 
