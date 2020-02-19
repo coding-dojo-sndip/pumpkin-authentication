@@ -18,16 +18,20 @@ Objectif : rajouter l'authentification basique sur le service à travers d'un fi
 
 Résultat : les opérations de PATCH sont maintenant sécurisé avec Basic. Dans la pratique cela signifie que ces identifiants sont renseignés dans le fontend, ainsi seul le frontend peut effectuer ces opérations. c'est alors à la charge du frontend d'accepter ou non les demande de patch selon ce qu'il considère être légitime. Il doit donc gérer lui-même son authentification, le web service n'a aucune idée et ne contrôle pas l'authentification utilisée par le frontend pour accepter les requêtes.
 
+Solution : la classe src/main/java/jack/skellington/pumpkin/filter/BasicFilter.java
+
 ## Authentification avancée avec Keycloak
 
 Objectif : écrire un nouveau filtre qui effectuera l'authentification avec Keycloak. On suppose donc que l'application frontend authentifie l'utilisateur avec Keycloak, donc récupère un jeton et le transfère au web service.
 
 Résultat : ici aussi le web service sécurise les opérations PATCH mais en plus cette fois ci le web service a la maîtrise complète de l'authentification. Si le frontend est "percé", ça ne remet pas en cause la sécurité du backend.
 
+Solution : la classe src/main/java/jack/skellington/pumpkin/filter/KeycloakFilter.java
+
 ### Eléments de contexte
 
 - Keycloak installé en local sur 8181  : `standalone.bat -Djboss.socket.binding.port-offset=101`
-- Realm configuré avec client dont la redirect uri autorisée est `urn:ietf:wg:oauth:2.0:oob`
+- Realm configuré avec un client `client-test-web` en standard flow dont la redirect uri autorisée est `urn:ietf:wg:oauth:2.0:oob`
 
 Pour obtenir un jeton :
 - Simulation de la redirection du frontend vers Keycloak :

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.keycloak.adapters.servlet.KeycloakOIDCFilter;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component Pour l'activer : il faut désactiver le BasicFilter
 public class KeycloakFilter extends KeycloakOIDCFilter {
 
 	@Override
